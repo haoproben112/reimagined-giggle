@@ -1,0 +1,231 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --vang:#ffce3e;
+    --cam:#f6432e;
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-sort-bar-height:46px;
+    --header-with-search-height:calc(var(--header-height) - var(--navbar-height));
+}
+*{
+    box-sizing: initial;
+    /* initial kế thừ */
+}
+html{
+    font-size: 62.5%;
+    /* 100% bằng 16px */
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Redsponsive */
+.grid__full-width{
+    width: 100%;
+}
+.grid__row-2-4{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+    /*wrap cho xuống hàng */
+}
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 19%;
+    display: flex;
+    
+    /* flex-wrap: wrap; */
+}
+.grid__column-2-5{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 19.1%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+    max-width: 100%;
+}
+
+/* modal */
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 100;
+    
+}
+.open{
+ display: flex;
+}
+.modal .modal__overlay{
+    background-color: #ccc;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    animation: faceout linear 2s;
+}
+
+.modal .modal__body{
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+}
+.js-menu-mobile-container{
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    margin-top: calc((var(--header-sort-bar-height) + var(--header-height) - 46px)); 
+    padding: 0px 24px;
+    animation: menu-mobile-container ease-in-out 0.4s;
+}
+@keyframes menu-mobile-container {
+    from { 
+        left: -500px;
+        opacity: 0;
+    }
+    to { 
+        left: 0px;
+        opacity: 1;
+    }
+    
+}
+@keyframes growth {
+    from { transform: scale(var(--growth--from));}
+    to { transform: scale(var(--growth--to));
+    }
+}
+@keyframes faceout{
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+.modal__footer{
+    --growth--from:0.7;
+    --growth--to:1;
+    background-color: #ccc;
+    height: 40px;
+    line-height: 40px;
+    animation: growth linear 0.1s; 
+}
+
+/* common */
+.clear{
+    cursor: text;
+    color: var(--white-color);
+    margin-right: 4px;
+}
+.border-right-white{
+    padding-right: 18px;
+    border-right: 1px solid var(--white-color);
+}
+.border-right-Black{
+    padding-right: 18px;
+    border-right: 1.5px solid rgb(173, 145, 145);
+    
+}
+.border-top-grey{
+border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.mgl-11{
+margin-left: 11px;
+}
+.mgr-11{
+    margin-right: 11px;
+}
+.mgr-8px{
+    margin-right: 8px;
+}
+.mt-48px__mb-32px{
+margin: 48px 0 32px 0;
+}
+/* form */
+.btn{
+    min-width: 54px;
+    height:36px;
+    text-decoration: none;
+    border-radius:2px;
+    font-size: 1.5rem;
+    padding: 0 8px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    cursor: pointer;
+    display: inline-flex;
+    background-color: white;
+}
+.btn-close:hover{
+    background-color:rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+.btn.btn--size-s {
+    height: 20px;
+    font-size: 5px;
+    padding: 8px;
+}
+.btn.btn--primary{
+    background-color: var(--cam);
+    color: white;
+}
+.btn.btn--disabled{
+    cursor: default;
+    filter: brightness();
+}
+
+/*  */
+
+.paginattion{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.pagination-item{
+list-style-type: none;
+margin: 0 10px;
+}
+
+.pagination-item__active .pagination-item-link{
+    color: #fff;
+    background-color: var(--cam)
+}
+.pagination-item__active:hover .pagination-item-link{
+    opacity: 0.8;
+}
+
+.pagination-item-link{
+text-decoration: none;
+font-size: 2rem;
+font-weight: 300;
+color: #939393;
+text-align: center;
+display: block;
+min-width: 40px;
+height: 30px ;
+text-align: center;
+line-height: 30px;
+border-radius: 2px;
+}
+
+.pagination-item__icon{
+    line-height: 30px !important;
+    opacity: 0.6;
+}
